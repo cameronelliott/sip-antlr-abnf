@@ -558,14 +558,14 @@ provider-tag          = "tsp"
 provider-hostname     = domain ; <domain> is defined in [RFC1035]
                         ; See section 2.5.10
 future-extension      = ";" 1*(token-char) ["=" ((1*(token-char)
-                        ["?" 1*(token-char)]) / quoted-string )]
+                        ["?" 1*(token-char)]) / quoted-string-telnum )]
                         ; See section 2.5.11 and [RFC2543]
 token-char            = (%x21 / %x23-27 / %x2A-2B / %x2D-2E / %x30-39
                         / %x41-5A / %x5E-7A / %x7C / %x7E)
                         ; Characters in URLs must follow escaping rules
                         ; as explained in [RFC2396]
                         ; See sections 1.2 and 2.5.11
-quoted-string         = %x22 *( "\" CHAR / (%x20-21 / %x23-7E
+quoted-string-telnum         = %x22 *( "\" CHAR / (%x20-21 / %x23-7E
                         / %x80-FF )) %x22
                         ; Characters in URLs must follow escaping rules
                         ; as explained in [RFC2396]
@@ -577,6 +577,53 @@ one-second-pause      = "p"
 wait-for-dial-tone    = "w"
 dtmf-digit            = "*" / "#" / "A" / "B" / "C" / "D"
 
+
+; rfc2234-6.1
+ALPHA          =  %x41-5A / %x61-7A   ; A-Z / a-z
+
+BIT            =  "0" / "1"
+
+CHAR           =  %x01-7F
+                        ; any 7-bit US-ASCII character,
+                        ;  excluding NUL
+
+CR             =  %x0D
+                        ; carriage return
+
+CRLF           =  CR LF
+                        ; Internet standard newline
+
+CTL            =  %x00-1F / %x7F
+                        ; controls
+
+DIGIT          =  %x30-39
+                        ; 0-9
+
+DQUOTE         =  %x22
+                        ; " (Double Quote)
+
+HEXDIG         =  DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
+
+HTAB           =  %x09
+                        ; horizontal tab
+
+LF             =  %x0A
+                        ; linefeed
+
+LWSP           =  *(WSP / CRLF WSP)
+                        ; linear white space (past newline)
+
+OCTET          =  %x00-FF
+                        ; 8 bits of data
+
+SP             =  %x20
+                        ; space
+
+VCHAR          =  %x21-7E
+                        ; visible (printing) characters
+
+WSP            =  SP / HTAB
+                        ; white space
 
 
 
