@@ -23,8 +23,8 @@ rem add your own output language possibly
 
 echo grammar Sip; >Sip.g4
 Abnf-To-Antlr-1.5.1-Binaries\AbnfToAntlr.exe Sip.abnf >>Sip.g4
-java -jar antlr\antlr-4.7.2-complete.jar -Dlanguage=CSharp -o out\cs Sip.g4
-java -jar antlr\antlr-4.7.2-complete.jar -Dlanguage=Go -o out\go Sip.g4
+java -jar antlr\antlr-4.7.2-complete.jar -Dlanguage=CSharp -o generated\csharp Sip.g4
+java -jar antlr\antlr-4.7.2-complete.jar -Dlanguage=Go -o generated\go Sip.g4
 
 
 
